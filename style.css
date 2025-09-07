@@ -4,6 +4,23 @@ body {
   padding: 0;
   background: #f4f4f9;
 }
+header {
+  background: #6c2dc7;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+h1, h2 {
+  margin: 0.5rem 0;
+}
+
+.form-section {
+  background: #fff;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+}
 
 
 
