@@ -70,3 +70,4 @@ function getJogadoras() {
 function setJogadoras(jogadoras) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(jogadoras));
 }
+ //testando branch josue, agora vai, fe 
