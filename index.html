@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Jogadoras- Futebol Feminino</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Jogadoras- Futebol Feminino</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>Cadastro de Jogadoras</h1>
-    </header>
-    <main>
-    <!-- formulario das jogadoras -->
+  <header>
+    <h1>Cadastro de Jogadoras</h1>
+  </header>
+  <main>
+   
     <section class="form-section">
       <h2>Adicionar / Editar Jogadora</h2>
       <form id="playerForm">
@@ -27,24 +27,20 @@
       </form>
     </section>
 
-     <!-- filtro para buscar por nome ou posicao -->
-    <section class="filters">
+    
+    <section class="filters-section">
       <input type="text" id="search" placeholder="Buscar por nome ou posição...">
       <select id="filterClube">
         <option value="">Todos os clubes</option>
       </select>
-      <button onclick="ordenarPorNome()">Ordenar por Nome</button>
-      <button onclick="ordenarPorPosicao()">Ordenar por Posição</button>
+      <button class="ordenar-btn" onclick="ordenarPorNome()">Ordenar por Nome</button>
+      <button class="ordenar-btn" onclick="ordenarPorPosicao()">Ordenar por Posição</button>
     </section>
 
-    <!--lista das jogadoras -->
-    <section id="cardsContainer" class="cards-container"></section>
-
-
-    </main>
     
+    <section id="cardsContainer" class="cards-container"></section>
+  </main>
 
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

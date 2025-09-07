@@ -41,6 +41,47 @@ form button:hover {
   background: #541a9c;
 }
 
+
+.filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+  justify-content: center;
+}
+
+#search, #filterClube {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s;
+  min-width: 220px;
+}
+
+#search:focus, #filterClube:focus {
+  border-color: #6c2dc7;
+  box-shadow: 0 0 5px rgba(108, 45, 199, 0.3);
+}
+
+
+.ordenar-btn {
+  padding: 8px 14px;
+  background-color: #6c2dc7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.ordenar-btn:hover {
+  background-color: #541a9c;
+  transform: scale(1.05);
+}
+
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -82,12 +123,3 @@ button.action-btn {
 button.action-btn:hover {
   color: #6c2dc7;
 }
-
-
-
-
-
-
-
-
-
