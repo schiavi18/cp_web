@@ -1,10 +1,10 @@
-// Dados iniciais
+
 const initialData = [
   {
     nome: "Andressa Alves",
     posicao: "Meio-campo",
     clube: "Corinthians",
-    foto: "https://example.com/andressa.jpg",
+    foto: "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/CI5QJEC7UJDKNN2CXTMJMJZ7XM.jpg?auth=7bab316c28efe1caea985265e0a3ccc21bb5527cc6ec330463faf9ef60f8faa3&width=1080&height=845",
     gols: 15,
     assistencias: 10,
     jogos: 28,
@@ -14,7 +14,7 @@ const initialData = [
     nome: "Dayana Rodríguez",
     posicao: "Meio-campo",
     clube: "Corinthians",
-    foto: "https://example.com/dayana.jpg",
+    foto: "https://cdn.meutimao.com.br/_upload/jogador/dayana-lisset-rodriguez-leon-no-corinthians_x_corinthians.jpg",
     gols: 5,
     assistencias: 12,
     jogos: 30,
@@ -24,7 +24,7 @@ const initialData = [
     nome: "Mariza",
     posicao: "Zagueira",
     clube: "Corinthians",
-    foto: "https://example.com/mariza.jpg",
+    foto: "https://cdn.acritica.net/upload/dn_arquivo/2025/04/174318471777c67132097f9b1ff028aed0eca8d21b.png",
     gols: 2,
     assistencias: 1,
     jogos: 32,
@@ -34,7 +34,7 @@ const initialData = [
     nome: "Thaís Regina",
     posicao: "Zagueira",
     clube: "Corinthians",
-    foto: "https://example.com/thais.jpg",
+    foto: "https://cdn.meutimao.com.br/_upload/jogador/thais-regina-da-silva-no-corinthians_x_corinthians.jpg",
     gols: 1,
     assistencias: 2,
     jogos: 25,
@@ -44,7 +44,7 @@ const initialData = [
     nome: "Letícia Teles",
     posicao: "Zagueira",
     clube: "Corinthians",
-    foto: "https://example.com/leticia.jpg",
+    foto: "https://cdn.meutimao.com.br/_upload/jogador/leticia-teles-da-silva-no-corinthians_4_corinthians.jpg",
     gols: 0,
     assistencias: 0,
     jogos: 18,
@@ -54,23 +54,22 @@ const initialData = [
 
 const STORAGE_KEY = "jogadoras";
 
-//local storage inicia 
+
 function initData() {
   if (!localStorage.getItem(STORAGE_KEY)) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(initialData));
   }
 }
-//retorna lista
+
 
 function getJogadoras() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
 
-//salva lista
 function setJogadoras(jogadoras) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(jogadoras));
 }
-//cards
+
 function renderJogadoras() {
   const container = document.getElementById("cardsContainer");
   container.innerHTML = "";
@@ -79,7 +78,7 @@ function renderJogadoras() {
   const search = document.getElementById("search").value.toLowerCase();
   const filterClube = document.getElementById("filterClube").value;
 
-  // filtro
+
   jogadoras = jogadoras.filter(j =>
     (j.nome.toLowerCase().includes(search) || j.posicao.toLowerCase().includes(search)) &&
     (filterClube === "" || j.clube === filterClube)
