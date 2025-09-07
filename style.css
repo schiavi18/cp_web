@@ -2,10 +2,10 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f9;
+  background: #C8A2C8;
 }
 header {
-  background: #6c2dc7;
+  background: #240046;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -30,7 +30,7 @@ form input, form button, select {
 }
 
 form button {
-  background: #6c2dc7;
+  background: #240046;
   color: white;
   border: none;
   border-radius: 5px;
@@ -60,14 +60,14 @@ form button:hover {
 }
 
 #search:focus, #filterClube:focus {
-  border-color: #6c2dc7;
+  border-color: #240046;
   box-shadow: 0 0 5px rgba(108, 45, 199, 0.3);
 }
 
 
 .ordenar-btn {
   padding: 8px 14px;
-  background-color: #6c2dc7;
+  background-color: #240046;
   color: white;
   border: none;
   border-radius: 8px;
