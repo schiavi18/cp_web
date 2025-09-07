@@ -27,6 +27,19 @@
       </form>
     </section>
 
+     <!-- filtro para buscar por nome ou posicao -->
+    <section class="filters">
+      <input type="text" id="search" placeholder="Buscar por nome ou posição...">
+      <select id="filterClube">
+        <option value="">Todos os clubes</option>
+      </select>
+      <button onclick="ordenarPorNome()">Ordenar por Nome</button>
+      <button onclick="ordenarPorPosicao()">Ordenar por Posição</button>
+    </section>
+
+    <!--lista das jogadoras -->
+    <section id="cardsContainer" class="cards-container"></section>
+
 
     </main>
     
