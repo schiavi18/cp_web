@@ -27,7 +27,7 @@ A aplicação utiliza o **LocalStorage** como base de dados, simulando um banco 
 
 - **HTML5**
 - **CSS3**
-- **JavaScript (ES6+)**
+- **JavaScript**
 - **LocalStorage**
 
 ---
