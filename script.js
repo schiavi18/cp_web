@@ -70,4 +70,39 @@ function getJogadoras() {
 function setJogadoras(jogadoras) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(jogadoras));
 }
- //testando branch josue, agora vai, fe 
+//cards
+function renderJogadoras() {
+  const container = document.getElementById("cardsContainer");
+  container.innerHTML = "";
+
+  let jogadoras = getJogadoras();
+  const search = document.getElementById("search").value.toLowerCase();
+  const filterClube = document.getElementById("filterClube").value;
+
+  // filtro
+  jogadoras = jogadoras.filter(j =>
+    (j.nome.toLowerCase().includes(search) || j.posicao.toLowerCase().includes(search)) &&
+    (filterClube === "" || j.clube === filterClube)
+  );
+
+  jogadoras.forEach((j, index) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${j.foto}" alt="${j.nome}">
+      <h3>${j.nome}</h3>
+      <p>${j.posicao} - ${j.clube}</p>
+      <p>Gols: ${j.gols} | Assistências: ${j.assistencias} | Jogos: ${j.jogos}</p>
+      <div class="actions">
+        <button class="action-btn" onclick="toggleFavorita(${index})">${j.favorita ? "★" : "☆"}</button>
+        <button class="action-btn" onclick="editJogadora(${index})">✏️</button>
+        <button class="action-btn" onclick="deleteJogadora(${index})">🗑️</button>
+      </div>
+    `;
+
+    container.appendChild(card);
+  });
+
+  atualizarFiltroClubes();
+}
