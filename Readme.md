@@ -32,7 +32,10 @@ A aplicação utiliza o **LocalStorage** como base de dados, simulando um banco 
 
 ---
 
-## DESENVOLVEDORES
+##  👩‍💻 DESENVOLVEDORES
 - Julia Schiavi
 - Josué Faria
+
+## 💻 Link site
+- https://schiavi18.github.io/cp_web/
 
