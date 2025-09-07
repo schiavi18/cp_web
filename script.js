@@ -106,3 +106,24 @@ function renderJogadoras() {
 
   atualizarFiltroClubes();
 }
+
+function atualizarFiltroClubes() {
+  const jogadoras = getJogadoras();
+  const select = document.getElementById("filterClube");
+  const clubes = [...new Set(jogadoras.map(j => j.clube))];
+
+  select.innerHTML = `<option value="">Todos os clubes</option>`;
+  clubes.forEach(clube => {
+    const option = document.createElement("option");
+    option.value = clube;
+    option.textContent = clube;
+    select.appendChild(option);
+  });
+}
+
+function toggleFavorita(index) {
+  const jogadoras = getJogadoras();
+  jogadoras[index].favorita = !jogadoras[index].favorita;
+  setJogadoras(jogadoras);
+  renderJogadoras();
+}
