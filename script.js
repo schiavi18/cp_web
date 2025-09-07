@@ -1,4 +1,3 @@
-
 const initialData = [
   {
     nome: "Andressa Alves",
@@ -61,7 +60,6 @@ function initData() {
   }
 }
 
-
 function getJogadoras() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 }
@@ -72,12 +70,12 @@ function setJogadoras(jogadoras) {
 
 function renderJogadoras() {
   const container = document.getElementById("cardsContainer");
+  if (!container) return; // evita erro se o container não existir
   container.innerHTML = "";
 
   let jogadoras = getJogadoras();
-  const search = document.getElementById("search").value.toLowerCase();
-  const filterClube = document.getElementById("filterClube").value;
-
+  const search = document.getElementById("search")?.value.toLowerCase() || "";
+  const filterClube = document.getElementById("filterClube")?.value || "";
 
   jogadoras = jogadoras.filter(j =>
     (j.nome.toLowerCase().includes(search) || j.posicao.toLowerCase().includes(search)) &&
@@ -109,8 +107,9 @@ function renderJogadoras() {
 function atualizarFiltroClubes() {
   const jogadoras = getJogadoras();
   const select = document.getElementById("filterClube");
-  const clubes = [...new Set(jogadoras.map(j => j.clube))];
+  if (!select) return;
 
+  const clubes = [...new Set(jogadoras.map(j => j.clube))];
   select.innerHTML = `<option value="">Todos os clubes</option>`;
   clubes.forEach(clube => {
     const option = document.createElement("option");
@@ -127,7 +126,7 @@ function toggleFavorita(index) {
   renderJogadoras();
 }
 
-document.getElementById("playerForm").addEventListener("submit", function(e) {
+document.getElementById("playerForm")?.addEventListener("submit", function(e) {
   e.preventDefault();
   const jogadoras = getJogadoras();
 
@@ -157,7 +156,6 @@ document.getElementById("playerForm").addEventListener("submit", function(e) {
   renderJogadoras();
 });
 
-
 function editJogadora(index) {
   const jogadora = getJogadoras()[index];
   document.getElementById("nome").value = jogadora.nome;
@@ -170,7 +168,6 @@ function editJogadora(index) {
   document.getElementById("editIndex").value = index;
 }
 
-
 function deleteJogadora(index) {
   const jogadoras = getJogadoras();
   jogadoras.splice(index, 1);
@@ -178,7 +175,6 @@ function deleteJogadora(index) {
   alert("Jogadora removida com sucesso!");
   renderJogadoras();
 }
-
 
 function ordenarPorNome() {
   const jogadoras = getJogadoras();
@@ -194,9 +190,8 @@ function ordenarPorPosicao() {
   renderJogadoras();
 }
 
-
-document.getElementById("search").addEventListener("input", renderJogadoras);
-document.getElementById("filterClube").addEventListener("change", renderJogadoras);
+document.getElementById("search")?.addEventListener("input", renderJogadoras);
+document.getElementById("filterClube")?.addEventListener("change", renderJogadoras);
 
 
 initData();
