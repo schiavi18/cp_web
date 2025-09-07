@@ -170,3 +170,35 @@ function editJogadora(index) {
   document.getElementById("foto").value = jogadora.foto;
   document.getElementById("editIndex").value = index;
 }
+
+
+function deleteJogadora(index) {
+  const jogadoras = getJogadoras();
+  jogadoras.splice(index, 1);
+  setJogadoras(jogadoras);
+  alert("Jogadora removida com sucesso!");
+  renderJogadoras();
+}
+
+
+function ordenarPorNome() {
+  const jogadoras = getJogadoras();
+  jogadoras.sort((a, b) => a.nome.localeCompare(b.nome));
+  setJogadoras(jogadoras);
+  renderJogadoras();
+}
+
+function ordenarPorPosicao() {
+  const jogadoras = getJogadoras();
+  jogadoras.sort((a, b) => a.posicao.localeCompare(b.posicao));
+  setJogadoras(jogadoras);
+  renderJogadoras();
+}
+
+
+document.getElementById("search").addEventListener("input", renderJogadoras);
+document.getElementById("filterClube").addEventListener("change", renderJogadoras);
+
+
+initData();
+renderJogadoras();
