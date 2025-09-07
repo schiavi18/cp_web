@@ -127,3 +127,46 @@ function toggleFavorita(index) {
   setJogadoras(jogadoras);
   renderJogadoras();
 }
+
+document.getElementById("playerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const jogadoras = getJogadoras();
+
+  const novaJogadora = {
+    nome: document.getElementById("nome").value,
+    posicao: document.getElementById("posicao").value,
+    clube: document.getElementById("clube").value,
+    gols: parseInt(document.getElementById("gols").value),
+    assistencias: parseInt(document.getElementById("assistencias").value),
+    jogos: parseInt(document.getElementById("jogos").value),
+    foto: document.getElementById("foto").value,
+    favorita: false
+  };
+
+  const editIndex = document.getElementById("editIndex").value;
+  if (editIndex !== "") {
+    jogadoras[editIndex] = novaJogadora;
+    alert("Jogadora editada com sucesso!");
+  } else {
+    jogadoras.push(novaJogadora);
+    alert("Jogadora adicionada com sucesso!");
+  }
+
+  setJogadoras(jogadoras);
+  this.reset();
+  document.getElementById("editIndex").value = "";
+  renderJogadoras();
+});
+
+
+function editJogadora(index) {
+  const jogadora = getJogadoras()[index];
+  document.getElementById("nome").value = jogadora.nome;
+  document.getElementById("posicao").value = jogadora.posicao;
+  document.getElementById("clube").value = jogadora.clube;
+  document.getElementById("gols").value = jogadora.gols;
+  document.getElementById("assistencias").value = jogadora.assistencias;
+  document.getElementById("jogos").value = jogadora.jogos;
+  document.getElementById("foto").value = jogadora.foto;
+  document.getElementById("editIndex").value = index;
+}
