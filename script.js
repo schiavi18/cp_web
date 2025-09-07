@@ -54,3 +54,19 @@ const initialData = [
 
 const STORAGE_KEY = "jogadoras";
 
+//local storage inicia 
+function initData() {
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(initialData));
+  }
+}
+//retorna lista
+
+function getJogadoras() {
+  return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+}
+
+//salva lista
+function setJogadoras(jogadoras) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(jogadoras));
+}
